@@ -1,0 +1,135 @@
+
+
+/* Font sizes*/
+
+/* TEXT clamp*/
+
+.line-clamp-2 {
+	/*! autoprefixer: ignore next */
+	-webkit-box-orient: vertical;
+	/* autoprefixer: on */
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.line-clamp-3 {
+	/*! autoprefixer: ignore next */
+	-webkit-box-orient: vertical;
+	/* autoprefixer: on */
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.line-clamp-4 {
+	/*! autoprefixer: ignore next */
+	-webkit-box-orient: vertical;
+	/* autoprefixer: on */
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+
+.text-white {
+	color: var(--white) !important;
+}
+
+.white-space-normal {
+	white-space: normal !important;
+}
+
+
+// TEXT ALIGN
+.taL {
+	text-align: left;
+}
+
+.taC {
+	text-align: center;
+}
+
+.taR {
+	text-align: right;
+}
+
+.taJ {
+	text-align: justify;
+}
+
+@include mq(mob) {
+	.taML {
+		text-align: left;
+	}
+
+	.taMC {
+		text-align: center;
+	}
+
+	.taMR {
+		text-align: right;
+	}
+
+	.taMJ {
+		text-align: justify;
+	}
+}
+
+// TEXT DECORATION
+.tdU {
+	text-decoration: underline;
+}
+
+.tdN {
+	text-decoration: none;
+}
+
+@include mq(mob) {
+	.tdMU {
+		text-decoration: underline;
+	}
+
+	.tdMN {
+		text-decoration: none;
+	}
+}
+
+// TEXT TRANSFORM
+.ttU {
+	text-transform: uppercase!important;
+
+	::placeholder {
+		/* Recent browsers */
+		text-transform: none;
+	}
+}
+
+.ttL {
+	text-transform: lowercase!important;
+}
+
+.ttC {
+	text-transform: capitalize!important;
+}
+
+.ttI {
+	text-transform: initial!important;
+}
+
+@include mq(mob) {
+	.ttMU {
+		text-transform: uppercase;
+	}
+
+	.ttML {
+		text-transform: lowercase;
+	}
+}
