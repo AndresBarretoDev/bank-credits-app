@@ -1,13 +1,8 @@
 
 <div nz-row [nzGutter]="[16,16]">
-    <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="6" nzXl="6"  *ngFor="let item of newsList">
-      <nz-card [nzTitle]="item.title">
-        <p [innerHTML]="item.body"></p>
-      </nz-card>
-    </div>
-    
+  <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="6" nzXl="6"  
+    *ngFor="let item of newsList">
+   <app-cards [item]="item"></app-cards>
   </div>
+</div>
 
-<pre>Contador: {{countert}}</pre>
-<button class="btn" (click)="aumentar()"> aumentar</button>
-<button class="btn" (click)="disminuir()"> Disminuir</button>

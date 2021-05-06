@@ -1,11 +1,13 @@
 import { Action } from "@ngrx/store";
+import { DECREMENTAR, INCREMENTAR } from "../actions/DemoActions";
 
- export const demoReducer = (state:number=10, action:Action) =>{
+
+ export const demo = (state:number=8, action:Action) =>{
      switch (action.type) {
-         case 'INCREMENT':
+         case INCREMENTAR:
              return state + 1;
      
-         case 'DECREMENT':
+         case DECREMENTAR:
              return state - 1;
      
          default:

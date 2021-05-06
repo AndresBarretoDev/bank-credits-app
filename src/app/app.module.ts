@@ -14,10 +14,14 @@ import { IconsProviderModule } from './icons-provider.module';
 
 import { ComponentsModule } from './components/components.module';
 import { StoreModule } from '@ngrx/store';
-import { demoReducer } from './reducers/demo.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+import { newsList } from './reducers/newsList.reducer';
 import { ZorroUiModule } from './zorro-ui/zorro-ui.module';
-
-
+import { environment } from 'src/environments/environment';
+import * as reducers from './reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { NewsEffect } from './effects/news.effects';
 registerLocaleData(es);
 
 @NgModule({
@@ -34,7 +38,12 @@ registerLocaleData(es);
     ComponentsModule,
     ZorroUiModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({contador:demoReducer})
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production, 
+    }),
+    EffectsModule.forRoot([NewsEffect])
   ],
   providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]
