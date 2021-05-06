@@ -1,0 +1,65 @@
+
+
+<form [formGroup]="registerForm" 
+    (ngSubmit)="handleRegister(registerForm)" 
+    class="form"
+    autocomplete="off">
+    <h1 class="form__title">Registro </h1>
+    <div class="form__container">
+        <div class="form__box">
+            <input autocomplete="off" 
+                class="form__input" 
+                type="text" 
+                placeholder="Nombre" 
+                formControlName="name">
+            <span class="error-message" *ngIf="errorControl.name.errors?.required && validName">Campo obligatorio</span>
+            <span class="error-message" *ngIf="errorControl.name.errors?.pattern && validName">Ingresa un nombre válido</span>
+        </div>
+        <div class="form__box">
+            <input autocomplete="off" 
+            class="form__input" 
+            type="text" 
+            placeholder="Apellido" 
+            formControlName="family_name">
+            <span class="error-message" *ngIf="errorControl.family_name.errors?.required && validFamilyName">Campo obligatorio</span>
+            <span class="error-message" *ngIf="errorControl.family_name.errors?.pattern && validFamilyName">Ingresa un apellido válido</span>
+        </div>
+        <div class="form__box">
+            <input autocomplete="off" 
+            class="form__input" 
+            type="email" 
+            placeholder="Email" 
+            formControlName="email">
+            <span class="error-message" *ngIf="errorControl.email.errors?.required && validEmail">Campo obligatorio</span>
+            <span class="error-message" *ngIf="errorControl.email.errors?.pattern && validEmail">Ingresa un email válido</span>
+        </div>
+        <div class="form__box">
+            
+            <input autocomplete="off" 
+            class="form__input" 
+            type="tel" 
+            placeholder="Teléfono" 
+            formControlName="phone"
+            maxlength="10">
+            <span class="error-message" *ngIf="errorControl.phone.errors?.required && validPhone">Campo obligatorio</span>
+            <span class="error-message" *ngIf="errorControl.phone.errors?.pattern && validPhone">Ingresa un teléfono válido</span>
+        </div>
+        <div class="form__box">
+            <nz-select class="form__select" formControlName="program" nzPlaceHolder="Programa">
+                <nz-option *ngFor="let option of dataPrograms" [nzLabel]="option.name" [nzValue]="option.id"></nz-option>
+            </nz-select>
+            <span class="error-message" *ngIf="errorControl.program.errors?.required && validProgram">Campo obligatorio</span>
+        </div>
+        <div class="form__box">
+            <textarea autocomplete="off" 
+                class="form__input" 
+                type="text" 
+                placeholder="Comentarios" 
+                formControlName="comment">
+            </textarea>
+        </div>
+
+        <button nz-button class="" [nzType]="'primary'">Registrar</button>
+    </div>
+</form>
+

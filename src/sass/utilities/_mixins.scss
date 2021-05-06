@@ -89,6 +89,9 @@
 }
 
 @mixin placeholder {
+	@include optional-at-root('::placeholder') {
+		@content;
+	}
 	@include optional-at-root('::-webkit-input-placeholder') {
 		@content;
 	}
@@ -101,6 +104,8 @@
 	@include optional-at-root(':-ms-input-placeholder') {
 		@content;
 	}
+
+	
 }
 
 // CLEAR FLOAT

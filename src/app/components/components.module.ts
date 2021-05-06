@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseBancoComponent } from './base-banco/base-banco.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ZorroUiModule } from '../zorro-ui/zorro-ui.module';
 
 
 
 @NgModule({
   declarations: [
-    BaseBancoComponent
+    RegisterFormComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    ZorroUiModule
   ],
-  exports:[BaseBancoComponent]
+  exports:[RegisterFormComponent]
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

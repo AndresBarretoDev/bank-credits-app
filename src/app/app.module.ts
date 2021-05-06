@@ -7,13 +7,16 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { es_ES } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
-import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
+
 import { ComponentsModule } from './components/components.module';
+import { StoreModule } from '@ngrx/store';
+import { demoReducer } from './reducers/demo.reducer';
+import { ZorroUiModule } from './zorro-ui/zorro-ui.module';
+
 
 registerLocaleData(es);
 
@@ -28,9 +31,10 @@ registerLocaleData(es);
     HttpClientModule,
     BrowserAnimationsModule,
     IconsProviderModule,
-    NzLayoutModule,
-    NzMenuModule,
-    ComponentsModule
+    ComponentsModule,
+    ZorroUiModule,
+    ReactiveFormsModule,
+    StoreModule.forRoot({contador:demoReducer})
   ],
   providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]

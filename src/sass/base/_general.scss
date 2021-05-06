@@ -1,7 +1,9 @@
 html, body, body *, *, *::before, *::after {
     box-sizing: border-box;
 }
-
+body{
+	font-family: $baseFamily;
+}
 body, html, h6, h5, h4, h3, h2, h1, p {
     font-size: $baseFont + px;
     padding: 0;
