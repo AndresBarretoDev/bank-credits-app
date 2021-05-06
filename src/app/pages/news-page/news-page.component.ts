@@ -18,10 +18,8 @@ detail:any
     
     this.store.select('newsList').subscribe( newsItem => {
       const id = this.actRouter.snapshot.paramMap.get('id');
-      this.detail = newsItem.find(newsId => newsId.id === id )
-      ;
+      this.detail = newsItem.find(newsId => newsId.id === id );
     })
-    
    
   }
   goBack(){

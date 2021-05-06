@@ -61,8 +61,9 @@ export class RegisterFormComponent implements OnInit {
       });
     }
     this.api.saveRegister(dataForm.value).subscribe(resp =>{
-      // alert("El servidor está respondiendo Estado 200 y "+ resp)
-    this.success(resp)
+      
+      this.registerForm.reset()
+      this.success(resp)
     })
     
   }
