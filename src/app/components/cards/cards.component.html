@@ -1,3 +1,6 @@
-<nz-card [nzTitle]="item.title">
+<nz-card [nzTitle]="item.title"  [nzActions]="[actionSetting]">
     <p [innerHTML]="item.body"></p>
+    <ng-template #actionSetting>
+        <button nz-button nzType="primary" (click)="goToDetail(item.id)"> Ver más</button>
+      </ng-template>
 </nz-card>

@@ -8,6 +8,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 const zorroModules =[
   NzLayoutModule,
@@ -15,7 +16,8 @@ const zorroModules =[
   NzCardModule,
   NzGridModule,
   NzSelectModule,
-  NzButtonModule
+  NzButtonModule,
+  NzModalModule
 ]
 
 @NgModule({

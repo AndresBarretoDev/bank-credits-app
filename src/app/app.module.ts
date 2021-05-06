@@ -16,7 +16,6 @@ import { ComponentsModule } from './components/components.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { newsList } from './reducers/newsList.reducer';
 import { ZorroUiModule } from './zorro-ui/zorro-ui.module';
 import { environment } from 'src/environments/environment';
 import * as reducers from './reducers';

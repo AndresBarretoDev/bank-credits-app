@@ -1,7 +1,7 @@
 
 <div nz-row [nzGutter]="[16,16]">
-  <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="6" nzXl="6"  
-    *ngFor="let item of newsList">
+  <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="8" nzXl="6"  
+    *ngFor="let item of newsList | async">
    <app-cards [item]="item"></app-cards>
   </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { ApiConnectionService } from 'src/app/services/api-connection.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class RegisterFormComponent implements OnInit {
 
   registerForm:FormGroup;
   dataPrograms:any;
-  constructor(private formBuild:FormBuilder, private api:ApiConnectionService) { }
+  constructor(private formBuild:FormBuilder, private api:ApiConnectionService, private modal: NzModalService) { }
 
   ngOnInit() {
     this.creatForm();
@@ -54,16 +55,14 @@ export class RegisterFormComponent implements OnInit {
   
   handleRegister(dataForm:any){
     
-
     if(dataForm.invalid){
       return Object.values(dataForm.controls).forEach( (control:any) => {
         control.markAsTouched()
       });
     }
-    console.log(dataForm.value);
     this.api.saveRegister(dataForm.value).subscribe(resp =>{
-      console.log("la respuesta",resp);
-      alert("El servidor está respondiendo Estado 200 y "+ resp)
+      // alert("El servidor está respondiendo Estado 200 y "+ resp)
+    this.success(resp)
     })
     
   }
@@ -75,6 +74,12 @@ export class RegisterFormComponent implements OnInit {
       this.dataPrograms = removeDuplicate
       
     })
+  }
+  success(response): void {
+    this.modal.success({
+      nzTitle: 'Envio exitoso',
+      nzContent: 'El servidor responde '+response
+    });
   }
 
 }
